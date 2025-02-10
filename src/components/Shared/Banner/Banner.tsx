@@ -32,33 +32,28 @@ const skillItems = [
 const Banner = () => {
   return (
     <div className="min-h-screen flex items-center w-[80%] mx-auto">
-      <div className="container mx-auto px-4 py-10">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+      <div className="container mx-auto px-4 py-5">
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-10">
           {/* Left Text Content */}
-          <div className="md:w-1/2 space-y-6 lg:space-y-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-              Senior Designer
-              <span className="block mt-4 text-blue-600 dark:text-blue-400">
-                & Developer
-              </span>
+          <div className="md:w-1/2 space-y-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+              Junior Designer
+              <span className="block mt-4 text-orange-600">& Developer</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
-              Hi, I&apos;m{" "}
-              <span className="font-bold text-black dark:text-white">
-                Sanchita Devi
-              </span>
-              . A passionate Junior Designer and Front-End Developer based in
-              Dhaka, Bangladesh.
+            <p className="text-lg text-gray-500 leading-relaxed">
+              Hi, I&apos;m <span className="font-bold">Sanchita Devi</span>. A
+              passionate Junior Designer and Front-End Developer based in Dhaka,
+              Bangladesh.
             </p>
 
-            <div className="pt-8 flex flex-row items-center justify-between">
+            <div className="pt-10 md:pt-16 flex flex-row items-center justify-between">
               <h3 className="text-lg font-semibold text-gray-400 ">
                 High knowledge on
               </h3>
               {/* Vertical divider */}
 
-              <div className="h-8 border-r border-gray-200 dark:border-gray-800"></div>
+              <div className="h-8 border-r border-gray-300 dark:border-gray-800"></div>
 
               {/* Skill Items */}
 
