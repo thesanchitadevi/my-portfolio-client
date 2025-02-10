@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between p-4 relative z-10 w-[90%] mx-auto">
       {/* Logo */}
-      <Link href="/" className="text-3xl font-bold ">
+      <Link href="/" className="text-3xl font-extrabold ">
         thesanchitadevi
       </Link>
 
@@ -42,7 +42,7 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-20">
           <div className="p-4">
-            <div className="clear-both mt-4 space-y-4">
+            <div className="flex flex-col clear-both mt-4 space-y-4">
               {menuItems.map(({ href, label }) => (
                 <Link
                   key={href}
