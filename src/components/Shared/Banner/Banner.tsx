@@ -47,21 +47,21 @@ const Banner = () => {
               Bangladesh.
             </p>
 
-            <div className="pt-10 md:pt-16 flex flex-row items-center justify-between">
+            <div className="pt-10 md:pt-16 flex flex-col md:flex-row items-center justify-between">
               <h3 className="text-lg font-semibold text-gray-400 ">
                 High knowledge on
               </h3>
               {/* Vertical divider */}
 
-              <div className="h-8 border-r border-gray-300 dark:border-gray-800"></div>
+              <div className="h-8 border-r border-gray-300"></div>
 
               {/* Skill Items */}
 
-              <div className="flex gap-2 ">
+              <div className="flex gap-2">
                 {skillItems.map((item) => (
                   <div
                     key={item.id}
-                    className="flex items-center bg-white rounded-full p-3 gap-4  shadow-lg"
+                    className="flex items-center bg-white rounded-full p-3 gap-4 shadow-lg"
                   >
                     <Image
                       src={item.logo}
@@ -76,7 +76,7 @@ const Banner = () => {
           </div>
 
           {/* Right Image */}
-          <div className="md:w-1/2 relative rounded-full overflow-hidden aspect-square mx-auto">
+          <div className="md:w-1/2 relative rounded-full overflow-hidden aspect-square mx-auto mt-10 md:mt-0">
             <svg viewBox="0 0 400 400" className="w-full h-full">
               {/* Base Orange Circle */}
               <circle cx="200" cy="200" r="133" className="fill-orange-400" />
