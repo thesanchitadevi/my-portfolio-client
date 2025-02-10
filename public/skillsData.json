@@ -1,0 +1,49 @@
+{
+  "skills": [
+    {
+      "id": 1,
+      "name": "HTML",
+      "level": "90%"
+    },
+    {
+      "id": 2,
+      "name": "CSS",
+      "level": "80%"
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "level": "70%"
+    },
+    {
+      "id": 4,
+      "name": "React",
+      "level": "60%"
+    },
+    {
+      "id": 5,
+      "name": "Node.js",
+      "level": "50%"
+    },
+    {
+      "id": 6,
+      "name": "MongoDB",
+      "level": "40%"
+    },
+    {
+      "id": 7,
+      "name": "Express",
+      "level": "30%"
+    },
+    {
+      "id": 8,
+      "name": "Python",
+      "level": "20%"
+    },
+    {
+      "id": 9,
+      "name": "C++",
+      "level": "5%"
+    }
+  ]
+}

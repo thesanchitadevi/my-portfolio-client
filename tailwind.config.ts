@@ -11,6 +11,15 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        orange: {
+          100: "#fff7ed",
+          300: "#fdba74",
+          400: "#fb923c",
+        },
+      },
+      backgroundImage: {
+        "gradient-overlay":
+          "linear-gradient(to right, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1))",
       },
     },
   },
