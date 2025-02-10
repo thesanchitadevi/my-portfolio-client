@@ -1,5 +1,10 @@
 import Image from "next/image";
 import SkillsSection from "./skills";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About | Sanchita Devi",
+};
 
 const AboutPage = () => {
   return (
