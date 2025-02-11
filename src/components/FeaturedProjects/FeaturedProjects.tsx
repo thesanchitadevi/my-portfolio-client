@@ -19,7 +19,7 @@ const FeaturedProjects = async () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container max-w-6xl mx-auto">
         <div className="space-y-4">
           <h6 className="text-orange-500 font-extrabold uppercase">
             Featured Projects

@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 flex items-center justify-between p-4 bg-white/80 backdrop-blur-sm z-50 w-full sm:w-[90%] sm:mx-auto ">
       {/* Logo */}
-      <Link href="/" className="text-3xl font-extrabold ">
+      <Link href="/" className="text-3xl font-extrabold text-gray-700">
         thesanchitadevi
       </Link>
 
@@ -49,8 +49,8 @@ const Navbar = () => {
                   href={href}
                   className={`${
                     pathname === href
-                      ? "text-teal-600 font-bold"
-                      : "text-gray-700 hover:text-6eal-700"
+                      ? "text-orange-600 font-bold"
+                      : "text-gray-700 hover:text-orange-700"
                   }`}
                 >
                   {label}

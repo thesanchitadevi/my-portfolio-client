@@ -21,77 +21,115 @@ const contactItems = [
 
 const ContactPage = () => {
   return (
-    <div>
-      <div className="mt-6 max-w-6xl mx-auto">
-        <div className="space-y-4">
-          <h6 className="text-orange-500 font-extrabold uppercase ">
+    <div className="px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="space-y-4 mb-12">
+          <h6 className="text-orange-500 font-extrabold uppercase">
             Contact me
           </h6>
-          <h2 className="text-gray-800 text-2xl font-extrabold w-full md:w-1/2">
+          <h2 className="text-gray-800 text-2xl md:text-3xl font-extrabold">
             Feel free to contact me if any assistance is needed in the future
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {contactItems.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-row items-center justify-center rounded-lg w-full h-44 p-5 gap-4"
+                className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left bg-white p-6 rounded-xl transition-shadow"
               >
-                <div className="bg-white rounded-full shadow-lg p-5">
-                  {/* <FiMapPin className="w-7 h-7 text-orange-600" /> */}
-                  {<item.icon className="w-7 h-7 text-orange-600" />}
+                <div className="bg-white shadow-lg rounded-full p-4 mb-4 md:mb-0 md:mr-4">
+                  <item.icon className="w-6 h-6 text-orange-600" />
                 </div>
-                <h4 className="text-gray-800 text-lg font-bold">
-                  {item.title}
-                  <p className="text-sm text-gray-500 mt-1">
-                    {" "}
-                    {item.description}
-                  </p>
-                </h4>
+                <div>
+                  <h4 className="text-gray-800 text-lg font-semibold mb-1">
+                    {item.title}
+                  </h4>
+                  {item.title === "Phone" ? (
+                    <a
+                      href={`tel:${item.description}`}
+                      className="text-gray-600 text-sm hover:text-orange-600 transition-colors"
+                    >
+                      {item.description}
+                    </a>
+                  ) : item.title === "Mail" ? (
+                    <a
+                      href={`mailto:${item.description}`}
+                      className="text-gray-600 text-sm hover:text-orange-600 transition-colors"
+                    >
+                      {item.description}
+                    </a>
+                  ) : (
+                    <p className="text-gray-600 text-sm">{item.description}</p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="grid sm:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-6xl bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md font-[sans-serif]">
-          <div className="w-[100%]">
+
+        <div className="grid sm:grid-cols-2 gap-8 p-6 sm:p-8 bg-white rounded-xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
+          <div className="h-64 sm:h-96 rounded-xl overflow-hidden">
             <iframe
+              title="Office Location Map"
               width="100%"
-              height="400"
-              frameborder="0"
+              height="100%"
+              frameBorder="0"
               scrolling="no"
-              marginheight="0"
-              marginwidth="0"
+              marginHeight="0"
+              marginWidth="0"
               src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=Dhaka+(My%20Business%20Name)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            >
-              <a href="https://www.gps.ie/">cat gps tracker</a>
-            </iframe>
+              className="rounded-lg"
+            />
           </div>
 
-          <form className="ml-auo space-y-4">
-            <input
-              type="text"
-              placeholder="Name"
-              className="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500"
-            />
-            <input
-              type="text"
-              placeholder="Subject"
-              className="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500"
-            />
-            <textarea
-              placeholder="Message"
-              rows="6"
-              className="w-full text-gray-800 rounded-md px-4 border text-sm pt-2.5 outline-none focus:border-blue-500"
-            ></textarea>
+          <form className="space-y-4">
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm text-gray-600 mb-1"
+              >
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="your.email@example.com"
+                className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-orange-500"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="subject"
+                className="block text-sm text-gray-600 mb-1"
+              >
+                Subject
+              </label>
+              <input
+                id="subject"
+                type="text"
+                placeholder="How can we help?"
+                className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-orange-500"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-sm text-gray-600 mb-1"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                placeholder="Your message..."
+                rows="4"
+                className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-orange-500"
+              />
+            </div>
             <button
-              type="button"
-              className="text-white bg-blue-500 hover:bg-blue-600 rounded-md text-sm px-4 py-2.5 w-full !mt-6"
+              type="submit"
+              className="rounded-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6  transition-colors"
             >
-              Send
+              Send Message
             </button>
           </form>
         </div>

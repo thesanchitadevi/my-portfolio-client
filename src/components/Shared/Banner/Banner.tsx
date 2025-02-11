@@ -36,7 +36,7 @@ const Banner = () => {
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-10">
           {/* Left Text Content */}
           <div className="md:w-1/2 space-y-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-700">
               Junior Designer
               <span className="block mt-4 text-orange-600">& Developer</span>
             </h1>

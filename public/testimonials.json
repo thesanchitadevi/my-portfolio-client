@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "role": "CEO, Tech Corp",
+    "text": "This service completely transformed our business operations. The efficiency and reliability are unmatched!",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "role": "Marketing Director",
+    "text": "An absolute game-changer! The results we've seen in just one month are incredible.",
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "Mike Johnson",
+    "role": "Startup Founder",
+    "text": "Best decision we ever made. The support team is phenomenal and always available.",
+    "rating": 5
+  }
+]
