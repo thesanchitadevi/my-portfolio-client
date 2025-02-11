@@ -1,3 +1,4 @@
+import ProjectsBanner from "@/components/ui/Project/projectBanner";
 import ProjectsGrid from "@/components/ui/Project/ProjectGrid";
 
 const ProjectsPage = async () => {
@@ -16,6 +17,7 @@ const ProjectsPage = async () => {
 
   return (
     <div>
+      <ProjectsBanner />
       <ProjectsGrid projects={projects} />
     </div>
   );

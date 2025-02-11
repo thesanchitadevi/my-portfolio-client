@@ -101,6 +101,7 @@ export default function ProjectCard({ project }: { project: IProject }) {
         <motion.div className="flex gap-4" variants={staggerVariants}>
           <motion.a
             href={project.liveLink}
+            target="_blank"
             className="text-orange-600 dark:text-orange-400 hover:text-orange-800 dark:hover:text-orange-300 font-medium"
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}

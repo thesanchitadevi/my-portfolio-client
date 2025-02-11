@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 flex items-center justify-between p-4 bg-white/80 backdrop-blur-sm  z-50 w-full px-4 sm:w-[90%] sm:mx-auto ">
+    <nav className="sticky top-0 flex items-center justify-between p-4 bg-white/80 backdrop-blur-sm z-50 w-full sm:w-[90%] sm:mx-auto ">
       {/* Logo */}
       <Link href="/" className="text-3xl font-extrabold ">
         thesanchitadevi
