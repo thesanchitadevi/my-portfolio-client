@@ -2,11 +2,31 @@
 
 import { IBlog } from "@/types";
 import { motion } from "framer-motion";
+import { Dot } from "lucide-react";
 import Image from "next/image";
+import { Typewriter } from "react-simple-typewriter";
 
 const BlogDetailsCard = ({ blog }: { blog: IBlog }) => {
+  const blogDate = new Date(blog?.data?.createdAt).toLocaleDateString("en-US", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });
   return (
     <div className="container mx-auto px-4 py-12">
+      {/* Typewriter Title */}
+      <h1 className="md:text-xl text-sm font-bold mb-6 text-gray-700">
+        Blogs /{" "}
+        <Typewriter
+          words={[blog?.data?.title]}
+          loop={0}
+          cursor
+          cursorStyle="_"
+          typeSpeed={70}
+          deleteSpeed={50}
+          delaySpeed={1000}
+        />
+      </h1>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -18,8 +38,8 @@ const BlogDetailsCard = ({ blog }: { blog: IBlog }) => {
           className="md:w-1/2"
         >
           <Image
-            src={blog.image}
-            alt={blog.title}
+            src={blog?.data?.image}
+            alt={blog?.data?.title}
             className="rounded-lg shadow-lg w-full h-96 object-cover"
             width={500}
             height={500}
@@ -31,12 +51,15 @@ const BlogDetailsCard = ({ blog }: { blog: IBlog }) => {
           animate={{ x: 0 }}
           className="md:w-1/2"
         >
-          <div className="flex justify-between text-gray-500 mb-4">
-            <span>{blog.date}</span>
-            <span>{blog.category}</span>
+          <div className="flex items-center text-lg text-gray-500 mb-2">
+            <span>{blogDate}</span>
+            <Dot size={24} />
+            <span>{blog?.data?.category}</span>
           </div>
-          <h1 className="text-4xl font-bold mb-6">{blog.title}</h1>
-          <p className="text-gray-700 leading-relaxed">{blog.description}</p>
+          <h2 className="text-3xl font-extrabold text-gray-800 mb-4 md:w-1/2">
+            {blog?.data?.title}
+          </h2>
+          <p className="text-gray-600">{blog?.data?.content}</p>
         </motion.div>
       </motion.div>
     </div>

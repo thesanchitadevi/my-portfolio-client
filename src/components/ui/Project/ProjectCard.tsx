@@ -5,7 +5,7 @@ import { IProject } from "@/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const cardVariants = {
+export const cardVariants = {
   offscreen: {
     y: 50,
     opacity: 0,

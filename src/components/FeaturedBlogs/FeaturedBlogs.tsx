@@ -1,5 +1,5 @@
-import BlogCard from "../ui/Blog/BlogCard";
 import { IBlog } from "@/types";
+import FeaturedBlogCard from "../ui/Blog/FeaturedBlogCard";
 
 const FeaturedBlogs = async () => {
   const res = await fetch(`${process.env.BACKEND_URL}/blogs`, {
@@ -26,7 +26,7 @@ const FeaturedBlogs = async () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-16">
           {blogs.slice(0, 3).map((blog: IBlog) => (
-            <BlogCard key={blog._id} blog={blog} />
+            <FeaturedBlogCard key={blog._id} blog={blog} />
           ))}
         </div>
       </div>
