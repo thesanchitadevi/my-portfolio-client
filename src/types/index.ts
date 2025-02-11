@@ -6,3 +6,12 @@ export interface IProject {
   techStack: string[];
   image: string;
 }
+
+export interface IBlog {
+  _id: number;
+  title: string;
+  date: string;
+  category: string;
+  content: string;
+  image: string;
+}

@@ -3,6 +3,7 @@ import AboutPage from "./about/page";
 import FeaturedProjects from "@/components/FeaturedProjects/FeaturedProjects";
 import ContactPage from "./contact/page";
 import Testimonials from "@/components/Testimonials/Testimonials";
+import FeaturedBlogs from "@/components/FeaturedBlogs/FeaturedBlogs";
 
 const HomePage = async () => {
   // Data fetching
@@ -14,6 +15,7 @@ const HomePage = async () => {
       <AboutPage />
       <FeaturedProjects />
       <Testimonials />
+      <FeaturedBlogs />
       <ContactPage />
     </div>
   );
