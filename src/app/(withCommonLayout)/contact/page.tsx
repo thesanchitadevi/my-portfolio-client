@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ui/Contact/ContactForm";
 import { Metadata } from "next";
 import { FiMapPin, FiPhoneCall } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
@@ -88,56 +89,7 @@ const ContactPage = () => {
             />
           </div>
 
-          <form className="space-y-4">
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm text-gray-600 mb-1"
-              >
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                placeholder="your.email@example.com"
-                className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-orange-500"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="subject"
-                className="block text-sm text-gray-600 mb-1"
-              >
-                Subject
-              </label>
-              <input
-                id="subject"
-                type="text"
-                placeholder="How can we help?"
-                className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-orange-500"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm text-gray-600 mb-1"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                placeholder="Your message..."
-                rows="4"
-                className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-orange-500"
-              />
-            </div>
-            <button
-              type="submit"
-              className="rounded-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6  transition-colors"
-            >
-              Send Message
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </div>
