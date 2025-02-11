@@ -21,13 +21,13 @@ const contactItems = [
 
 const ContactPage = () => {
   return (
-    <div className="px-4 sm:px-6 lg:px-8 py-8">
+    <div className="px-4 sm:px-6 lg:px-8 py-20">
       <div className="max-w-6xl mx-auto">
         <div className="space-y-4 mb-12">
           <h6 className="text-orange-500 font-extrabold uppercase">
             Contact me
           </h6>
-          <h2 className="text-gray-800 text-2xl md:text-3xl font-extrabold">
+          <h2 className="text-gray-800 text-2xl md:text-3xl font-extrabold md:w-1/2">
             Feel free to contact me if any assistance is needed in the future
           </h2>
 

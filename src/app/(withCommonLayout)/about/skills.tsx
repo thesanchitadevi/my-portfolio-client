@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FaCode, FaServer, FaPaintBrush, FaCogs } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -16,36 +19,74 @@ const SkillsSection = () => {
     { name: "DevOps", Icon: FaCogs, level: 75 },
   ];
 
+  const techIcons = [
+    { Icon: SiReact, color: "text-[#61DAFB]", name: "React" },
+    { Icon: SiNextdotjs, color: "text-black", name: "Next.js" },
+    { Icon: SiTailwindcss, color: "text-[#06B6D4]", name: "Tailwind" },
+    { Icon: SiNodedotjs, color: "text-[#339933]", name: "Node.js" },
+    { Icon: SiTypescript, color: "text-[#3178C6]", name: "TypeScript" },
+    { Icon: SiGit, color: "text-[#F05032]", name: "Git" },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <section className="py-24 px-4 bg-gray-50">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      className="py-24 px-4 bg-gray-50"
+    >
       <div className="max-w-6xl mx-auto">
-        <div className="space-y-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="space-y-4"
+        >
           <h6 className="text-orange-500 font-extrabold uppercase">
             Technical Skills
           </h6>
           <h2 className="text-gray-800 text-2xl font-extrabold">
             I offer a Full-cycle of Web Development Services
           </h2>
-          <p className="text-gray-400 text-bold ">
+          <p className="text-gray-400 text-bold">
             Equipped with a versatile tech stack spanning modern frontend
-            frameworks, cloud-native architectures, and DevOps automation. I
-            specialize in crafting full-stack solutions that balance
-            cutting-edge innovation with production-grade reliability. My
-            toolkit evolves constantly, currently focused on building performant
-            applications with TypeScript, Next.js, and scalable cloud services.
+            frameworks, cloud-native architectures, and DevOps automation.
           </p>
-        </div>
+        </motion.div>
 
         {/* Skill Progress Bars */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {skills.map(({ name, Icon, level }, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={itemVariants}
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
             >
               <div className="flex items-center mb-4">
-                <div className="p-3 bg-orange-100  rounded-lg">
-                  <Icon className="h-6 w-6 text-orange-700 " />
+                <div className="p-3 bg-orange-100 rounded-lg">
+                  <Icon className="h-6 w-6 text-orange-700" />
                 </div>
                 <h3 className="ml-4 text-xl font-semibold">{name}</h3>
               </div>
@@ -57,45 +98,42 @@ const SkillsSection = () => {
                   </span>
                 </div>
                 <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-orange-100">
-                  <div
-                    style={{ width: `${level}%` }}
-                    className="transition-all duration-500 ease-out bg-orange-600 rounded"
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${level}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="bg-orange-600 rounded h-full"
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Technology Icons Grid */}
-        <div className="mt-12 grid grid-cols-3 md:grid-cols-6 gap-4 text-center">
-          <div className="p-4 hover:scale-110 transition-transform">
-            <SiReact className="w-12 h-12 mx-auto text-[#61DAFB]" />
-            <span className="mt-2 block text-sm">React</span>
-          </div>
-          <div className="p-4 hover:scale-110 transition-transform">
-            <SiNextdotjs className="w-12 h-12 mx-auto text-black" />
-            <span className="mt-2 block text-sm">Next.js</span>
-          </div>
-          <div className="p-4 hover:scale-110 transition-transform">
-            <SiTailwindcss className="w-12 h-12 mx-auto text-[#06B6D4]" />
-            <span className="mt-2 block text-sm">Tailwind</span>
-          </div>
-          <div className="p-4 hover:scale-110 transition-transform">
-            <SiNodedotjs className="w-12 h-12 mx-auto text-[#339933]" />
-            <span className="mt-2 block text-sm">Node.js</span>
-          </div>
-          <div className="p-4 hover:scale-110 transition-transform">
-            <SiTypescript className="w-12 h-12 mx-auto text-[#3178C6]" />
-            <span className="mt-2 block text-sm">TypeScript</span>
-          </div>
-          <div className="p-4 hover:scale-110 transition-transform">
-            <SiGit className="w-12 h-12 mx-auto text-[#F05032]" />
-            <span className="mt-2 block text-sm">Git</span>
-          </div>
-        </div>
+        <motion.div
+          className="mt-12 grid grid-cols-3 md:grid-cols-6 gap-4 text-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {techIcons.map(({ Icon, color, name }, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="p-4"
+            >
+              <Icon className={`w-12 h-12 mx-auto ${color}`} />
+              <span className="mt-2 block text-sm">{name}</span>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

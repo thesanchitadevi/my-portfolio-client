@@ -1,7 +1,12 @@
+import BlogBanner from "@/components/ui/Blog/BlogBanner";
 import React from "react";
 
 const BlogPage = () => {
-  return <div>BlogPage</div>;
+  return (
+    <div>
+      <BlogBanner />
+    </div>
+  );
 };
 
 export default BlogPage;
