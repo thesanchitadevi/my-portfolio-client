@@ -2,7 +2,7 @@ import Sidebar from "@/components/Shared/Sidebar";
 
 const DashboardLayout = ({ children }) => {
   return (
-    <div className="flex">
+    <div className="flex ">
       <Sidebar />
       {children}
     </div>
