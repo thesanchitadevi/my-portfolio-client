@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiCode } from "react-icons/fi";
 import { Typewriter } from "react-simple-typewriter";
+import Link from "next/link";
 
 const ProjectDetailsCard = ({ project }: { project: IProject }) => {
   const variants = {
@@ -34,7 +35,7 @@ const ProjectDetailsCard = ({ project }: { project: IProject }) => {
     <div className="max-w-6xl mx-auto p-6">
       {/* Typewriter Title */}
       <h1 className="text-xl font-bold mb-6 text-gray-700">
-        Projects /{" "}
+        <Link href="/projects">Projects / </Link>
         <Typewriter
           words={[project?.data?.title]}
           loop={0}

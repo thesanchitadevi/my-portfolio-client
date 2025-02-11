@@ -4,6 +4,7 @@ import { IBlog } from "@/types";
 import { motion } from "framer-motion";
 import { Dot } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
 
 const BlogDetailsCard = ({ blog }: { blog: IBlog }) => {
@@ -16,7 +17,7 @@ const BlogDetailsCard = ({ blog }: { blog: IBlog }) => {
     <div className="container mx-auto px-4 py-12">
       {/* Typewriter Title */}
       <h1 className="md:text-xl text-sm font-bold mb-6 text-gray-700">
-        Blogs /{" "}
+        <Link href="/blogs">Blogs / </Link>
         <Typewriter
           words={[blog?.data?.title]}
           loop={0}

@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { FiMapPin, FiPhoneCall } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 
@@ -18,6 +19,11 @@ const contactItems = [
     description: "thesanchitadevi@gmail.com",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Contact | Sanchita Devi",
+  description: "Contact me for any assistance",
+};
 
 const ContactPage = () => {
   return (

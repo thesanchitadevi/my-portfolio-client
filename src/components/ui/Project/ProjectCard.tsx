@@ -4,6 +4,7 @@
 import { IProject } from "@/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export const cardVariants = {
   offscreen: {
@@ -100,13 +101,12 @@ export default function ProjectCard({ project }: { project: IProject }) {
 
         <motion.div className="flex gap-4" variants={staggerVariants}>
           <motion.a
-            href={`/projects/${project._id}`}
             className="text-orange-600 dark:text-orange-400 hover:text-orange-800 dark:hover:text-orange-300 font-medium"
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            View Details →
+            <Link href={`/projects/${project._id}`}> View Details →</Link>
           </motion.a>
           {/* <motion.a
             href="#"

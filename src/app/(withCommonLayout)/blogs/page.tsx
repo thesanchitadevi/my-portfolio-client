@@ -1,7 +1,13 @@
 import BlogBanner from "@/components/ui/Blog/BlogBanner";
 import BlogCard from "@/components/ui/Blog/BlogCard";
 import { IBlog } from "@/types";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Blogs | Sanchita Devi",
+  description: "Check out the latest on demand blogs",
+};
 
 const BlogPage = async () => {
   const res = await fetch(`${process.env.BACKEND_URL}/blogs`, {
