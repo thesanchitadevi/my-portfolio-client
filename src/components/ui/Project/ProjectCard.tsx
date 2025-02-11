@@ -84,14 +84,14 @@ export default function ProjectCard({ project }: { project: IProject }) {
         </motion.p>
 
         <motion.div
-          className="flex flex-wrap gap-2 mb-4"
+          className="flex flex-wrap gap-2 my-8"
           variants={staggerVariants}
         >
           {project.techStack.map((tech) => (
             <motion.span
               key={tech}
               variants={itemVariants}
-              className="px-3 py-1 bg-orange-100 text-orange-600  rounded-full text-sm"
+              className="px-2 py-1 bg-orange-100 text-orange-600  rounded-full text-xs"
             >
               {tech}
             </motion.span>
@@ -100,14 +100,13 @@ export default function ProjectCard({ project }: { project: IProject }) {
 
         <motion.div className="flex gap-4" variants={staggerVariants}>
           <motion.a
-            href={project.liveLink}
-            target="_blank"
+            href={`/projects/${project._id}`}
             className="text-orange-600 dark:text-orange-400 hover:text-orange-800 dark:hover:text-orange-300 font-medium"
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Live Demo →
+            View Details →
           </motion.a>
           {/* <motion.a
             href="#"

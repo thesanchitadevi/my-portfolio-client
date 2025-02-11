@@ -31,7 +31,7 @@ const FeaturedProjects = async () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-16">
           {projects.data.result.map((project: IProject) => (
             <div
-              key={project.id}
+              key={project._id}
               className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {/* Image Container with Overlay */}
@@ -66,7 +66,7 @@ const FeaturedProjects = async () => {
                 </div>
 
                 <Link
-                  href={`/projects/${project.id}`}
+                  href={`/projects/${project._id}`}
                   className="text-orange-600 dark:text-orange-400 hover:underline"
                 >
                   View Details →
