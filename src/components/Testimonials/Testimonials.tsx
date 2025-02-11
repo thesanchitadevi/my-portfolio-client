@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Spinner from "../ui/Spinner";
 
 interface Testimonial {
   id: number;
@@ -46,7 +47,7 @@ const Testimonials = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        Loading...
+        <Spinner />
       </div>
     );
   }
