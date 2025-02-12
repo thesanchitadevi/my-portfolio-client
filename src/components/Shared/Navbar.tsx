@@ -10,13 +10,16 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuItems = [
-    { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
     { href: "/blogs", label: "Blogs" },
     {
       href: "/contact",
       label: "Contact",
+    },
+    {
+      href: "/dashboard",
+      label: "Dashboard",
     },
   ];
 
