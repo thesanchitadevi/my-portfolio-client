@@ -1,9 +1,9 @@
 "use server";
 
-import { redirect } from "next/navigation";
-
 export const createBlog = async (data: FormData) => {
   const blogData = Object.fromEntries(data.entries());
+
+  console.log({ blogData });
 
   const res = await fetch(`${process.env.BACKEND_URL}/blogs`, {
     method: "POST",
@@ -15,9 +15,7 @@ export const createBlog = async (data: FormData) => {
 
   const blogInfo = await res.json();
 
-  if (blogInfo) {
-    redirect("/dahboard/blogs");
-  }
+  console.log({ blogInfo });
 
   return blogInfo;
 };

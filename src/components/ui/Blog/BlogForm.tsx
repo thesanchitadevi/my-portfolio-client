@@ -1,4 +1,4 @@
-import { createBlog } from "@/actions/CreateBlog";
+import { createBlog } from "@/actions/createBlog";
 import { ImageIcon, Text } from "lucide-react";
 import Form from "next/form";
 
@@ -29,7 +29,7 @@ const BlogForm = () => {
           <input
             type="text"
             id="category"
-            name="ticategorytle"
+            name="category"
             placeholder="Blog Category"
             className="w-full p-2 border rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
             required

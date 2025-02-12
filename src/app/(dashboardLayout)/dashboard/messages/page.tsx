@@ -1,5 +1,4 @@
-import { IBlog, IContact } from "@/types";
-import { Pencil, Trash } from "lucide-react";
+import { IContact } from "@/types";
 import Link from "next/link";
 import React from "react";
 

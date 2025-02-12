@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SkillsSection from "./skills";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About | Sanchita Devi",
@@ -49,13 +50,13 @@ const AboutPage = () => {
                 className="w-48"
               />
 
-              <a
+              <Link
                 href="/SanchitaDevi_CV.pdf"
                 download="SanchitaDevi_CV.pdf"
                 className="bg-orange-500 py-4 text-white text-xl font-bold rounded-full px-10 w-fit hover:bg-orange-600 transition-colors"
               >
                 Download CV
-              </a>
+              </Link>
             </div>
           </div>
         </div>
