@@ -8,7 +8,7 @@ const BlogForm = () => {
       <Form action={createBlog} className="max-w-2xl space-y-6">
         {/* Title Input */}
         <div className="space-y-2">
-          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-100">
             <Text size={18} />
             Blog Title
           </label>
@@ -22,7 +22,7 @@ const BlogForm = () => {
           />
         </div>
         <div className="space-y-2">
-          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-100">
             <Text size={18} />
             Blog category
           </label>
@@ -38,7 +38,7 @@ const BlogForm = () => {
 
         {/* Description Input */}
         <div className="space-y-2">
-          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-100">
             <Text size={18} />
             Content
           </label>
@@ -54,7 +54,7 @@ const BlogForm = () => {
 
         {/* Image URL Input */}
         <div className="space-y-2">
-          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-100">
             <ImageIcon size={18} />
             Image URL
           </label>

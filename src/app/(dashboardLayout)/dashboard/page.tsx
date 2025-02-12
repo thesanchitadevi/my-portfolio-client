@@ -1,13 +1,18 @@
 import { authOptions } from "@/utils/authOptions";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
+import Link from "next/link";
 
 const DashboardPage = async () => {
   const session = await getServerSession(authOptions);
 
   return (
-    <div>
-      <section className=" flex flex-col font-medium items-center justify-center h-screen">
+    <div className="w-full rounded-lg overflow-hidden p-4">
+      <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100">
+        <Link href="/dashboard">Dashboard /</Link>
+        <span className="text-orange-600"> Profile</span>
+      </h2>
+      <section className="flex flex-col font-medium items-center justify-center h-screen">
         {session?.user ? (
           <>
             <h1 className="text-4xl text-center mt-5">

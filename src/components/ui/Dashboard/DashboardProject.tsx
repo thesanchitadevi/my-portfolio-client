@@ -20,13 +20,13 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
     <div>
       {" "}
       <div className="w-full  rounded-lg overflow-hidden p-4">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">
+        <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">
           <Link href="/dashboard">Dashboard /</Link>
           <span className="text-orange-600"> Projects</span>
         </h2>
         <table className="w-full border-collapse border border-gray-300 text-sm">
           <thead>
-            <tr className="bg-gray-200">
+            <tr>
               <th className="border border-gray-300 px-2 py-1">#</th>
               <th className="border border-gray-300 px-2 py-1">Title</th>
               <th className="border border-gray-300 px-2 py-1">Description</th>

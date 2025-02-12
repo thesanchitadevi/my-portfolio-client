@@ -8,7 +8,7 @@ const ProjectForm = () => {
       <Form action={createProject} className="max-w-2xl space-y-6">
         {/* Title Input */}
         <div className="space-y-2">
-          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-100">
             <Text size={18} />
             Project Title
           </label>
@@ -24,7 +24,7 @@ const ProjectForm = () => {
 
         {/* Description Input */}
         <div className="space-y-2">
-          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-100">
             <Text size={18} />
             Description
           </label>
@@ -40,7 +40,7 @@ const ProjectForm = () => {
 
         {/* Live Link Input */}
         <div className="space-y-2">
-          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-100">
             <Link2 size={18} />
             Live Demo URL
           </label>
@@ -56,7 +56,7 @@ const ProjectForm = () => {
 
         {/* Tech Stack Input */}
         <div className="space-y-2">
-          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-100">
             <Wrench size={18} />
             Technology Stack
           </label>
@@ -80,7 +80,7 @@ const ProjectForm = () => {
 
         {/* Image URL Input */}
         <div className="space-y-2">
-          <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+          <label className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-100">
             <ImageIcon size={18} />
             Image URL
           </label>

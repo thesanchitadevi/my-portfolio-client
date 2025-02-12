@@ -17,7 +17,7 @@ const DashboardMessages = async () => {
   return (
     <div>
       <div className="w-full  rounded-lg overflow-hidden p-4">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">
+        <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">
           <Link href="/dashboard">Dashboard /</Link>
           <span className="text-orange-600"> Messages</span>
         </h2>

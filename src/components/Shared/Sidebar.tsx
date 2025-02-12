@@ -12,6 +12,7 @@ import {
 import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
+import ThemeSwitcher from "../ThemeSwitcher";
 
 type MenuItem = {
   name: string;
@@ -71,7 +72,7 @@ const Sidebar = ({ session }: { session: TUserProps | null }) => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen p-4 w-64 bg-gray-800 text-white fixed left-0 top-0 ">
+    <div className="flex flex-col min-h-screen p-4 w-64 bg-black text-white fixed left-0 top-0  border-r border-gray-700 ">
       <div className="flex-1 overflow-y-auto p-4">
         <div className="mb-8">
           <h1 className="text-xl font-bold text-orange-600">
