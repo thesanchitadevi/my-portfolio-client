@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
 
-type BlogDetailsCardProps = {
+export type BlogDetailsCardProps = {
   data: {
     title: string;
     image: string;
@@ -25,7 +25,7 @@ const BlogDetailsCard = ({ blog }: { blog: BlogDetailsCardProps }) => {
   return (
     <div className="container mx-auto px-4 py-12">
       {/* Typewriter Title */}
-      <h1 className="md:text-xl text-sm font-bold mb-6 text-gray-700">
+      <h1 className="md:text-xl text-sm font-bold mb-6 text-gray-700 dark:text-gray-100">
         <Link href="/blogs">Blogs / </Link>
         <Typewriter
           words={[blog?.data?.title]}
@@ -61,15 +61,17 @@ const BlogDetailsCard = ({ blog }: { blog: BlogDetailsCardProps }) => {
           animate={{ x: 0 }}
           className="md:w-1/2"
         >
-          <div className="flex items-center text-lg text-gray-500 mb-2">
+          <div className="flex items-center text-lg text-gray-500 dark:text-gray-400 mb-2">
             <span>{blogDate}</span>
             <Dot size={24} />
             <span>{blog?.data?.category}</span>
           </div>
-          <h2 className="text-3xl font-extrabold text-gray-800 mb-4 md:w-1/2">
+          <h2 className="text-3xl font-extrabold text-gray-800 dark:text-gray-100 mb-4 md:w-1/2">
             {blog?.data?.title}
           </h2>
-          <p className="text-gray-600">{blog?.data?.content}</p>
+          <p className="text-gray-600 dark:text-gray-300">
+            {blog?.data?.content}
+          </p>
         </motion.div>
       </motion.div>
     </div>

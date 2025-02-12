@@ -50,7 +50,7 @@ const ProjectDetailsCard = ({
   return (
     <div className="max-w-6xl mx-auto p-6">
       {/* Typewriter Title */}
-      <h1 className="text-xl font-bold mb-6 text-gray-700">
+      <h1 className="text-xl font-bold mb-6 text-gray-700 dark:text-gray-100">
         <Link href="/projects">Projects / </Link>
         <Typewriter
           words={[project?.data?.title]}
@@ -71,18 +71,18 @@ const ProjectDetailsCard = ({
           transition={{ delay: 0.2 }}
           className="md:w-1/3"
         >
-          <p className="text-gray-400 text-medium font-semibold mb-2">
+          <p className="text-gray-400 dark:text-gray-100 text-medium font-semibold mb-2">
             {projectDate}
           </p>
           <motion.h1
             variants={variants}
-            className="text-4xl font-extrabold text-gray-800 mb-4"
+            className="text-4xl font-extrabold text-gray-800 dark:text-gray-100 mb-4"
           >
             {project?.data?.title}
           </motion.h1>
           <motion.p
             variants={variants}
-            className="text-gray-500 font-bold mb-6"
+            className="text-gray-500 dark:text-gray-400 font-bold mb-6"
           >
             {project?.data?.description}
           </motion.p>
@@ -91,7 +91,7 @@ const ProjectDetailsCard = ({
             href={validateUrl(project?.data?.liveLink)}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 underline hover:text-gray-800 transition-colors"
+            className="text-gray-600 dark:text-gray-400 underline hover:text-gray-800 transition-colors"
           >
             <LinkIcon size={16} className="inline-block -mt-1 mr-1" />
             Project Link
@@ -121,7 +121,7 @@ const ProjectDetailsCard = ({
           animate={{ opacity: 1, x: 0 }}
           className="md:w-1/3 space-y-4"
         >
-          <div className="flex items-center gap-2 text-gray-600 mb-4">
+          <div className="flex items-center gap-2 text-gray-600 dark:text-gray-100 mb-4">
             <FiCode className="text-xl" />
             <h3 className="text-lg font-bold">Tech Stack</h3>
           </div>

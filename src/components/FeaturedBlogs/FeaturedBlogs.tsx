@@ -14,13 +14,13 @@ const FeaturedBlogs = async () => {
   const blogs = data.data.result;
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="space-y-4">
           <h6 className="text-orange-500 font-extrabold uppercase">
             Featured Blogs
           </h6>
-          <h2 className="text-gray-800 text-2xl font-extrabold">
+          <h2 className="text-gray-800 dark:text-gray-100 text-2xl font-extrabold">
             Check out the latest on demand blogs
           </h2>
         </div>

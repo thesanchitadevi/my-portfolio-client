@@ -30,7 +30,7 @@ const AboutPage = () => {
                 <h6 className="text-orange-500 font-extrabold uppercase">
                   About Me
                 </h6>
-                <h2 className="text-gray-800 text-2xl font-extrabold">
+                <h2 className="text-gray-800 dark:text-gray-100 text-2xl font-extrabold">
                   A passionate Junior Designer and Front-End Developer based in
                   Dhaka, Bangladesh.
                 </h2>
@@ -47,7 +47,7 @@ const AboutPage = () => {
                 alt="signature"
                 width={300}
                 height={100}
-                className="w-48"
+                className="w-48 dark:filter invert"
               />
 
               <Link

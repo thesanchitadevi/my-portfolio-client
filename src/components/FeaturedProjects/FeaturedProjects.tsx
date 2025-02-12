@@ -18,13 +18,13 @@ const FeaturedProjects = async () => {
   //   console.log(projects.data.result);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 ">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="space-y-4">
           <h6 className="text-orange-500 font-extrabold uppercase">
             Featured Projects
           </h6>
-          <h2 className="text-gray-800 text-2xl font-extrabold">
+          <h2 className="text-gray-800 dark:text-gray-100 text-2xl font-extrabold">
             Each project is a unique piece of development
           </h2>
         </div>
@@ -47,7 +47,7 @@ const FeaturedProjects = async () => {
               </div>
 
               {/* Info Card that slides up */}
-              <div className="absolute -bottom-3 left-0 right-0 bg-white/95 p-6 transform transition-all duration-500 translate-y-20 group-hover:translate-y-0">
+              <div className="absolute -bottom-3 left-0 right-0 bg-white/95 dark:bg-gray-950 p-6 transform transition-all duration-500 translate-y-20 group-hover:translate-y-0">
                 <h3 className="text-xl font-extrabold mb-2">{project.title}</h3>
                 <p className="text-gray-500 mb-4 line-clamp-3">
                   {project.description}
@@ -58,7 +58,7 @@ const FeaturedProjects = async () => {
                   {tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm hover:bg-orange-200 transition-colors"
+                      className="px-3 py-1 bg-orange-100 dark:bg-orange-800 text-orange-800 dark:text-gray-100 rounded-full text-sm hover:bg-orange-200 transition-colors"
                     >
                       {tag}
                     </span>

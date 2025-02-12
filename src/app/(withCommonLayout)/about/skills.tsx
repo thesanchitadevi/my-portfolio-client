@@ -49,7 +49,7 @@ const SkillsSection = () => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      className="py-24 px-4 bg-gray-50"
+      className="py-24 px-4"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -61,7 +61,7 @@ const SkillsSection = () => {
           <h6 className="text-orange-500 font-extrabold uppercase">
             Technical Skills
           </h6>
-          <h2 className="text-gray-800 text-2xl font-extrabold">
+          <h2 className="text-gray-800 dark:text-gray-100 text-2xl font-extrabold">
             I offer a Full-cycle of Web Development Services
           </h2>
           <p className="text-gray-400 text-bold">
@@ -82,7 +82,7 @@ const SkillsSection = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white dark:bg-black/30 p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
             >
               <div className="flex items-center mb-4">
                 <div className="p-3 bg-orange-100 rounded-lg">
@@ -93,7 +93,7 @@ const SkillsSection = () => {
 
               <div className="relative pt-1">
                 <div className="flex mb-2 items-center justify-between">
-                  <span className="text-xs font-bold inline-block py-1 px-2 rounded-full text-gray-800">
+                  <span className="text-xs font-bold inline-block py-1 px-2 rounded-full text-gray-800 dark:text-gray-100">
                     {level}%
                   </span>
                 </div>

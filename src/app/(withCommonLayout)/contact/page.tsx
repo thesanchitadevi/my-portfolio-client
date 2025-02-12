@@ -1,5 +1,6 @@
 import ContactForm from "@/components/ui/Contact/ContactForm";
 import { Metadata } from "next";
+import Link from "next/link";
 import { FiMapPin, FiPhoneCall } from "react-icons/fi";
 import { TfiEmail } from "react-icons/tfi";
 
@@ -34,7 +35,7 @@ const ContactPage = () => {
           <h6 className="text-orange-500 font-extrabold uppercase">
             Contact me
           </h6>
-          <h2 className="text-gray-800 text-2xl md:text-3xl font-extrabold md:w-1/2">
+          <h2 className="text-gray-800 dark:text-gray-100 text-2xl md:text-3xl font-extrabold md:w-1/2">
             Feel free to contact me if any assistance is needed in the future
           </h2>
 
@@ -42,31 +43,33 @@ const ContactPage = () => {
             {contactItems.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left bg-white p-6 rounded-xl transition-shadow"
+                className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left p-6 rounded-xl transition-shadow"
               >
-                <div className="bg-white shadow-lg rounded-full p-4 mb-4 md:mb-0 md:mr-4">
+                <div className="bg-white dark:bg-black shadow-lg rounded-full p-4 mb-4 md:mb-0 md:mr-4">
                   <item.icon className="w-6 h-6 text-orange-600" />
                 </div>
                 <div>
-                  <h4 className="text-gray-800 text-lg font-semibold mb-1">
+                  <h4 className="text-gray-800 dark:text-gray-100 text-lg font-semibold mb-1">
                     {item.title}
                   </h4>
                   {item.title === "Phone" ? (
-                    <a
+                    <Link
                       href={`tel:${item.description}`}
-                      className="text-gray-600 text-sm hover:text-orange-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-100 text-sm hover:text-orange-600 transition-colors"
                     >
                       {item.description}
-                    </a>
+                    </Link>
                   ) : item.title === "Mail" ? (
-                    <a
+                    <Link
                       href={`mailto:${item.description}`}
-                      className="text-gray-600 text-sm hover:text-orange-600 transition-colors"
+                      className="text-gray-600 dark:text-gray-100 text-sm hover:text-orange-600 transition-colors"
                     >
                       {item.description}
-                    </a>
+                    </Link>
                   ) : (
-                    <p className="text-gray-600 text-sm">{item.description}</p>
+                    <p className="text-gray-600 dark:text-gray-100 text-sm">
+                      {item.description}
+                    </p>
                   )}
                 </div>
               </div>
@@ -74,7 +77,7 @@ const ContactPage = () => {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-8 p-6 sm:p-8 bg-white rounded-xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
+        <div className="grid sm:grid-cols-2 gap-8 p-6 sm:p-8  rounded-xl shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
           <div className="h-64 sm:h-96 rounded-xl overflow-hidden">
             <iframe
               title="Office Location Map"
@@ -82,10 +85,10 @@ const ContactPage = () => {
               height="100%"
               frameBorder="0"
               scrolling="no"
-              marginHeight="0"
-              marginWidth="0"
+              marginHeight={0}
+              marginWidth={0}
               src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=Dhaka+(My%20Business%20Name)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-              className="rounded-lg"
+              className="rounded-lg "
             />
           </div>
 

@@ -9,7 +9,7 @@ import { Dot } from "lucide-react";
 const FeaturedBlogCard = ({ blog }: { blog: IBlog }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const blogDate = new Date(blog?.createdAt).toLocaleDateString("en-US", {
+  const blogDate = new Date(blog?.createdAt ?? "").toLocaleDateString("en-US", {
     month: "short",
     day: "2-digit",
     year: "numeric",
@@ -37,7 +37,7 @@ const FeaturedBlogCard = ({ blog }: { blog: IBlog }) => {
           <Dot size={24} />
           <span>{blog.category}</span>
         </div>
-        <h2 className="text-2xl font-extrabold text-gray-800 mb-4">
+        <h2 className="text-2xl font-extrabold text-gray-800 dark:text-gray-100 mb-4">
           {blog.title}
         </h2>
       </motion.div>
@@ -54,7 +54,7 @@ const FeaturedBlogCard = ({ blog }: { blog: IBlog }) => {
           <motion.div
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
-            className="bg-white rounded-lg max-w-2xl w-full p-6"
+            className="bg-white dark:bg-black rounded-lg max-w-2xl w-full p-6"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -69,7 +69,7 @@ const FeaturedBlogCard = ({ blog }: { blog: IBlog }) => {
               <Dot size={24} />
               <span>{blog.category}</span>
             </div>
-            <h2 className="text-2xl font-extrabold text-gray-800 mb-4">
+            <h2 className="text-2xl font-extrabold text-gray-800 mb-4 dark:text-gray-100">
               {blog.title}
             </h2>
             <p className="text-gray-600">{blog.content}</p>

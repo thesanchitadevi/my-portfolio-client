@@ -36,12 +36,12 @@ const BlogCard = ({ blog }: { blog: IBlog }) => {
           width={500}
           height={500}
         />
-        <div className="flex items-center text-lg text-gray-500 my-3">
+        <div className="flex items-center text-lg text-gray-500 dark:text-gray-400 my-3">
           <span>{blogDate}</span>
           <Dot size={24} />
           <span>{blog.category}</span>
         </div>
-        <h2 className="text-2xl font-extrabold text-gray-800 mb-4">
+        <h2 className="text-2xl font-extrabold text-gray-800 dark:text-gray-100 mb-4">
           {blog.title}
         </h2>
       </motion.div>

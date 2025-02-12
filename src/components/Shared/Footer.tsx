@@ -16,7 +16,7 @@ const Footer = () => {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="bg-orange-500 text-white px-4 py-8 h-44"
+      className="bg-orange-500 dark:bg-black/30 text-white px-4 py-8 h-44"
     >
       <div className="max-w-6xl mx-auto h-full flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Copyright Section */}

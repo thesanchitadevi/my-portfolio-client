@@ -67,7 +67,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className=" bg-gradient-to-br from-gray-100 to-gray-200 py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className=" bg-gradient-to-br from-gray-100 dark:from-black to-gray-200 py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Animated TESTIMONIAL text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <h2 className="text-[150px] font-black text-gray-400/60 animate-slide-in-out">
@@ -101,20 +101,22 @@ const Testimonials = () => {
                   }`}
               >
                 <div
-                  className={`bg-white p-8 rounded-2xl shadow-xl mx-4
+                  className={`bg-white dark:bg-black p-8 rounded-2xl shadow-xl mx-4
                   ${
                     isActive
                       ? "border-4 border-orange-500"
                       : "border-2 border-gray-200"
                   }`}
                 >
-                  <div className=" text-orange-500 text-4xl">“</div>
-                  <p className="text-gray-600 text-lg mb-6">
+                  <div className=" text-orange-500 dark:text-gray-100 text-4xl">
+                    “
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-100 text-lg mb-6">
                     {testimonial.text}
                   </p>
                   <div className="flex items-center">
                     <div className="ml-4">
-                      <p className="font-bold text-gray-900 text-xl">
+                      <p className="font-bold text-gray-900 dark:text-gray-100 text-xl">
                         {testimonial.name}
                       </p>
                       <p className="text-gray-600 text-sm">

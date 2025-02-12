@@ -71,7 +71,7 @@ export default function ProjectCard({ project }: { project: IProject }) {
         animate="visible"
       >
         <motion.h3
-          className="text-xl font-extrabold mb-2 text-gray-800 "
+          className="text-xl font-extrabold mb-2 text-gray-800 dark:text-gray-100"
           variants={itemVariants}
         >
           {project.title}
