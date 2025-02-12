@@ -14,7 +14,7 @@ export type FormValues = {
   password: string;
 };
 
-const LoginPage = (provider: string) => {
+const LoginPage = () => {
   const {
     register,
     handleSubmit,
