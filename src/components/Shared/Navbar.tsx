@@ -18,7 +18,7 @@ const Navbar = () => {
       label: "Contact",
     },
     {
-      href: "/dashboard",
+      href: "/login",
       label: "Dashboard",
     },
   ];
@@ -97,16 +97,18 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          {/* Menu Toggle Button */}
-          <button
-            onClick={toggleMenu}
-            className="text-4xl p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg ml-4 hidden md:block"
-          >
-            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
-          {/* Mode Toggle */}
-          <div className=" hidden md:block">
-            <ThemeSwitcher />
+          <div className="flex items-center justify-between gap-5">
+            {/* Menu Toggle Button */}
+            <button
+              onClick={toggleMenu}
+              className="text-4xl p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg  hidden md:block"
+            >
+              {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
+            {/* Mode Toggle */}
+            <div className="hidden md:block  px-5">
+              <ThemeSwitcher />
+            </div>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ export type FormValues = {
   password: string;
 };
 
-const LoginPage = () => {
+const LoginPage = (provider: string) => {
   const {
     register,
     handleSubmit,
@@ -138,7 +138,8 @@ const LoginPage = () => {
               <button
                 onClick={() =>
                   signIn("google", {
-                    callbackUrl: "http://localhost:3000/dashboard",
+                    callbackUrl:
+                      "https://my-portfolio-client-seven.vercel.app/dashboard",
                   })
                 }
                 className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200"
@@ -154,7 +155,8 @@ const LoginPage = () => {
                 // signIn function from next-auth/react package to sign in with GitHub provider and redirect to the dashboard page using the callbackUrl option
                 onClick={() =>
                   signIn("github", {
-                    callbackUrl: "http://localhost:3000/dashboard",
+                    callbackUrl:
+                      "https://my-portfolio-client-seven.vercel.app/dashboard",
                   })
                 }
                 className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200"
