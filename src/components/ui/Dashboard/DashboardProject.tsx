@@ -36,11 +36,8 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
             </tr>
           </thead>
           <tbody>
-            {projects.map((project: IProject, index: number) => (
-              <tr key={index} className="border border-gray-300">
-                <td className="border border-gray-300 px-2 py-3 text-center">
-                  {index + 1}
-                </td>
+            {projects.map((project: IProject) => (
+              <tr key={project._id} className="border border-gray-300">
                 <td className="border border-gray-300 px-2 py-1">
                   {project.title}
                 </td>
@@ -62,7 +59,7 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
                     href={validateUrl(project.liveLink)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 underline hover:text-blue-800 transition-colors"
+                    className="text-orange-600 underline hover:text-orange-800 transition-colors"
                   >
                     {project.liveLink}
                   </a>
@@ -109,10 +106,10 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
 
                 <div>
                   <label className="block text-sm font-medium mb-1">
-                    Content
+                    Description
                   </label>
                   <textarea
-                    name="content"
+                    name="description"
                     defaultValue={editProject?.description}
                     className="w-full p-2 border rounded h-32"
                   />
