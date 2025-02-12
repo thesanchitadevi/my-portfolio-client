@@ -92,7 +92,6 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
               <h2 className="text-xl font-bold mb-4">Edit Project</h2>
               <Form action={updateProject} className="space-y-4">
                 <input type="hidden" name="id" value={editProject?._id} />
-
                 <div>
                   <label className="block text-sm font-medium mb-1">
                     Title
@@ -103,7 +102,6 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
                     className="w-full p-2 border rounded"
                   />
                 </div>
-
                 <div>
                   <label className="block text-sm font-medium mb-1">
                     Description
@@ -119,13 +117,54 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
                   <label className="block text-sm font-medium mb-1">
                     Tech Stacks
                   </label>
-                  <input
-                    name="techStack"
-                    defaultValue={editProject?.techStack.join(", ")}
-                    className="w-full p-2 border rounded"
-                  />
+                  {editProject.techStack.map((tech, index) => (
+                    <div key={index} className="flex gap-2 mb-2">
+                      <input
+                        name="techStack"
+                        value={tech}
+                        onChange={(e) => {
+                          const newTechStack = [...editProject.techStack];
+                          newTechStack[index] = e.target.value;
+                          setEditProject({
+                            ...editProject,
+                            techStack: newTechStack,
+                          });
+                        }}
+                        className="w-full p-2 border rounded"
+                      />
+                      {/* Show remove button except for first input */}
+                      {index > 0 && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const newTechStack = editProject.techStack.filter(
+                              (_, i) => i !== index
+                            );
+                            setEditProject({
+                              ...editProject,
+                              techStack: newTechStack,
+                            });
+                          }}
+                          className="px-2 text-red-600"
+                        >
+                          Remove
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEditProject({
+                        ...editProject,
+                        techStack: [...editProject.techStack, ""],
+                      });
+                    }}
+                    className="mt-2 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+                  >
+                    Add Tech Stack
+                  </button>
                 </div>
-
                 <div>
                   <label className="block text-sm font-medium mb-1">Link</label>
                   <input
@@ -134,7 +173,6 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
                     className="w-full p-2 border rounded"
                   />
                 </div>
-
                 <div className="flex justify-end gap-2">
                   <button
                     type="button"

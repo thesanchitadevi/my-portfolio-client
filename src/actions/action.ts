@@ -53,7 +53,17 @@ export const deleteProject = async (formData: FormData) => {
 
 export const updateProject = async (formData: FormData) => {
   const id = formData.get("id");
-  const projectData = Object.fromEntries(formData.entries());
+
+  // Get all tech stack values as array
+  const techStack = formData.getAll("techStack");
+
+  // Create project data object
+  const projectData = {
+    title: formData.get("title"),
+    description: formData.get("description"),
+    techStack: techStack.filter((tech) => tech !== ""), // Remove empty values
+    liveLink: formData.get("liveLink"),
+  };
 
   const res = await fetch(`${process.env.BACKEND_URL}/projects/${id}`, {
     method: "PUT",
