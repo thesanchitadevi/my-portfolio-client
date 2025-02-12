@@ -22,7 +22,7 @@ export default async function DashboardLayout({
             session={session ? { ...session, user: session.user ?? {} } : null}
           />
         </div>
-        <div className="w-full bg-slate-100">{children}</div>
+        <div className="w-full">{children}</div>
       </div>
     </div>
   );

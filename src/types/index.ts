@@ -15,3 +15,10 @@ export interface IBlog {
   content: string;
   image: string;
 }
+
+export interface IContact {
+  _id: number;
+  name: string;
+  email: string;
+  message: string;
+}

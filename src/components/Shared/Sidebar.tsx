@@ -5,10 +5,8 @@ import {
   FileText,
   FolderIcon,
   MessageSquare,
-  PencilIcon,
   PlusIcon,
   SquarePen,
-  TrashIcon,
   UserCircleIcon,
 } from "lucide-react";
 import { signOut } from "next-auth/react";
@@ -50,28 +48,21 @@ const Sidebar = ({ session }: { session: TUserProps | null }) => {
       icon: FolderIcon,
       submenus: [
         { name: "Create", path: "/dashboard/projects/create", icon: PlusIcon },
-        { name: "Read", path: "/projects", icon: FileText },
-        { name: "Update", path: "/projects/update", icon: PencilIcon },
-        { name: "Delete", path: "/projects/delete", icon: TrashIcon },
+        { name: "Read", path: "/dashboard/projects", icon: FileText },
       ],
     },
     {
       name: "Blogs",
       icon: SquarePen,
       submenus: [
-        { name: "Create", path: "/blogs/create", icon: PlusIcon },
-        { name: "Read", path: "/blogs", icon: FileText },
-        { name: "Update", path: "/blogs/update", icon: PencilIcon },
-        { name: "Delete", path: "/blogs/delete", icon: TrashIcon },
+        { name: "Create", path: "/dashboard/blogs/create", icon: PlusIcon },
+        { name: "Read", path: "/dashboard/blogs", icon: FileText },
       ],
     },
     {
       name: "Messages",
       icon: MessageSquare,
-      submenus: [
-        { name: "Create", path: "/messages/create", icon: PlusIcon },
-        { name: "Read", path: "/blogs", icon: FileText },
-      ],
+      path: "/dashboard/messages",
     },
   ];
 
