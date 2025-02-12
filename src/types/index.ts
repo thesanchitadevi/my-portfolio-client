@@ -14,6 +14,7 @@ export interface IBlog {
   category: string;
   content: string;
   image: string;
+  createdAt?: string | Date;
 }
 
 export interface IContact {

@@ -1,13 +1,22 @@
 "use client";
 
-import { IBlog } from "@/types";
 import { motion } from "framer-motion";
 import { Dot } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
 
-const BlogDetailsCard = ({ blog }: { blog: IBlog }) => {
+type BlogDetailsCardProps = {
+  data: {
+    title: string;
+    image: string;
+    category: string;
+    content: string;
+    createdAt: string;
+  };
+};
+
+const BlogDetailsCard = ({ blog }: { blog: BlogDetailsCardProps }) => {
   const blogDate = new Date(blog?.data?.createdAt).toLocaleDateString("en-US", {
     month: "short",
     day: "2-digit",

@@ -24,71 +24,73 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 flex items-center justify-between p-4 bg-white/80 backdrop-blur-sm z-50 w-full sm:w-[90%] sm:mx-auto ">
-      {/* Logo */}
-      <Link href="/" className="text-3xl font-extrabold text-gray-700">
-        thesanchitadevi
-      </Link>
+    <nav className="sticky top-0 flex items-center justify-between p-4 bg-white/80 backdrop-blur-sm z-50 w-full mx-auto ">
+      <div className="container mx-auto flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="text-3xl font-extrabold text-gray-700">
+          thesanchitadevi
+        </Link>
 
-      {/* Menu Toggle Button */}
-      <button
-        onClick={toggleMenu}
-        className="text-2xl p-2 hover:bg-gray-100 rounded-lg ml-4 md:hidden"
-      >
-        {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-      </button>
-
-      {/* Mobile Dropdown Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-20">
-          <div className="p-4">
-            <div className="flex flex-col clear-both mt-4 space-y-4">
-              {menuItems.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className={`${
-                    pathname === href
-                      ? "text-orange-600 font-bold"
-                      : "text-gray-700 hover:text-orange-700"
-                  }`}
-                >
-                  {label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Desktop Menu with Sequential Animation */}
-      <div className="hidden md:flex items-center -ml-auto">
-        <div className="flex space-x-0 overflow-hidden">
-          {menuItems.map((item, index) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`hover:text-orange-500 text-xl px-3 transition-all duration-300 transform ${
-                isMenuOpen
-                  ? `opacity-100 translate-x-0 delay-[${index * 75}ms]`
-                  : "opacity-0 translate-x-full delay-0"
-              } ${
-                pathname === item.href
-                  ? "text-orange-600 font-bold"
-                  : "text-gray-800 hover:text-6eal-700"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
         {/* Menu Toggle Button */}
         <button
           onClick={toggleMenu}
-          className="text-4xl p-2 hover:bg-gray-100 rounded-lg ml-4 hidden md:block"
+          className="text-2xl p-2 hover:bg-gray-100 rounded-lg ml-4 md:hidden"
         >
           {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
+
+        {/* Mobile Dropdown Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-20">
+            <div className="p-4">
+              <div className="flex flex-col clear-both mt-4 space-y-4">
+                {menuItems.map(({ href, label }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={`${
+                      pathname === href
+                        ? "text-orange-600 font-bold"
+                        : "text-gray-700 hover:text-orange-700"
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Desktop Menu with Sequential Animation */}
+        <div className="hidden md:flex items-center -ml-auto">
+          <div className="flex space-x-0 overflow-hidden">
+            {menuItems.map((item, index) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`hover:text-orange-500 text-xl px-3 transition-all duration-300 transform ${
+                  isMenuOpen
+                    ? `opacity-100 translate-x-0 delay-[${index * 75}ms]`
+                    : "opacity-0 translate-x-full delay-0"
+                } ${
+                  pathname === item.href
+                    ? "text-orange-600 font-bold"
+                    : "text-gray-800 hover:text-6eal-700"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+          {/* Menu Toggle Button */}
+          <button
+            onClick={toggleMenu}
+            className="text-4xl p-2 hover:bg-gray-100 rounded-lg ml-4 hidden md:block"
+          >
+            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
+        </div>
       </div>
     </nav>
   );

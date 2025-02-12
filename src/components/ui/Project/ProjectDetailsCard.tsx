@@ -1,6 +1,5 @@
 "use client";
 
-import { IProject } from "@/types";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiCode } from "react-icons/fi";
@@ -9,7 +8,22 @@ import Link from "next/link";
 import { LinkIcon } from "lucide-react";
 import { validateUrl } from "@/utils/validateURL";
 
-const ProjectDetailsCard = ({ project }: { project: IProject }) => {
+type ProjectDetailsCardProps = {
+  data: {
+    title: string;
+    description: string;
+    image: string;
+    techStack: string[];
+    liveLink: string;
+    createdAt: string;
+  };
+};
+
+const ProjectDetailsCard = ({
+  project,
+}: {
+  project: ProjectDetailsCardProps;
+}) => {
   const variants = {
     hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0 },

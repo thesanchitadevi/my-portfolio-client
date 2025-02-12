@@ -9,9 +9,10 @@ import { cardVariants } from "../Project/ProjectCard";
 import Link from "next/link";
 
 const BlogCard = ({ blog }: { blog: IBlog }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isOpen, setIsOpen] = useState(false);
 
-  const blogDate = new Date(blog?.createdAt).toLocaleDateString("en-US", {
+  const blogDate = new Date(blog?.createdAt ?? "").toLocaleDateString("en-US", {
     month: "short",
     day: "2-digit",
     year: "numeric",
