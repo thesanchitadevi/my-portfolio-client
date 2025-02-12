@@ -6,6 +6,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FiCode } from "react-icons/fi";
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
+import { LinkIcon } from "lucide-react";
+import { validateUrl } from "@/utils/validateURL";
 
 const ProjectDetailsCard = ({ project }: { project: IProject }) => {
   const variants = {
@@ -70,6 +72,16 @@ const ProjectDetailsCard = ({ project }: { project: IProject }) => {
           >
             {project?.data?.description}
           </motion.p>
+          <motion.a
+            variants={variants}
+            href={validateUrl(project?.data?.liveLink)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 underline hover:text-gray-800 transition-colors"
+          >
+            <LinkIcon size={16} className="inline-block -mt-1 mr-1" />
+            Project Link
+          </motion.a>
         </motion.div>
 
         {/* Middle Section - Image */}
