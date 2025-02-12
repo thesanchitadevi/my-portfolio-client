@@ -139,7 +139,7 @@ const LoginPage = () => {
                 onClick={() =>
                   signIn("google", {
                     callbackUrl:
-                      "https://next-auth-starter-client.vercel.app/dashboard",
+                      "https://my-portfolio-server-alpha-ruby.vercel.app/dashboard",
                   })
                 }
                 className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200"
@@ -155,8 +155,7 @@ const LoginPage = () => {
                 // signIn function from next-auth/react package to sign in with GitHub provider and redirect to the dashboard page using the callbackUrl option
                 onClick={() =>
                   signIn("github", {
-                    callbackUrl:
-                      "https://next-auth-starter-client.vercel.app/dashboard",
+                    callbackUrl: "http://localhost:3000/dashboard",
                   })
                 }
                 className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200"
