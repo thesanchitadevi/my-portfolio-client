@@ -138,8 +138,7 @@ const LoginPage = () => {
               <button
                 onClick={() =>
                   signIn("google", {
-                    callbackUrl:
-                      "https://my-portfolio-server-alpha-ruby.vercel.app/dashboard",
+                    callbackUrl: "http://localhost:3000/dashboard",
                   })
                 }
                 className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200"
