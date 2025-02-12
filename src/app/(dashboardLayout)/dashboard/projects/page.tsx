@@ -3,7 +3,7 @@ import React from "react";
 
 const DashboardProjects = async () => {
   const res = await fetch(`${process.env.BACKEND_URL}/projects`, {
-    next: { revalidate: 60 },
+    next: { tags: ["projects"], revalidate: 60 },
   });
 
   if (!res.ok) {
