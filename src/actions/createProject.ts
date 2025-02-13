@@ -1,5 +1,8 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
 export const createProject = async (data: FormData) => {
   const techStack = data.getAll("techStack");
   const projectData = {
@@ -27,5 +30,9 @@ export const createProject = async (data: FormData) => {
     await res.json();
   }
 
-  // redirect("/dahboard/projects");
+  // Revalidate the projects page cache
+  revalidatePath("/dashboard/projects");
+
+  // Redirect after successful creation and revalidation
+  redirect("/dashboard/projects");
 };
