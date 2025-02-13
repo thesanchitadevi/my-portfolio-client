@@ -7,9 +7,6 @@ export const createBlog = async (data: FormData) => {
 
   const res = await fetch(`${process.env.BACKEND_URL}/blogs`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
     body: JSON.stringify(blogData),
   });
 
