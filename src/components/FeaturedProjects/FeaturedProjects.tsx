@@ -29,7 +29,7 @@ const FeaturedProjects = async () => {
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-16">
-          {projects.data.result.slice(0, 2).map((project: IProject) => (
+          {projects.data.result.slice(0, 3).map((project: IProject) => (
             <div
               key={project._id}
               className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"

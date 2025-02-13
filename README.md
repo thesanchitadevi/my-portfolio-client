@@ -22,6 +22,12 @@ This is my personal portfolio built using **Next.js 15**, **TypeScript**, **Tail
 - **Database:** MongoDB, Vercel
 - **Authentication:** NextAuth.js with Google & GitHub OAuth
 
+## Live Links
+
+- **Client:** [my-portfolio-client-seven.vercel.app](my-portfolio-client-seven.vercel.app)
+
+- **Server:** [my-portfolio-server-alpha-ruby.vercel.app](my-portfolio-server-alpha-ruby.vercel.app)
+
 ## Project Structure
 
 ```
@@ -78,21 +84,32 @@ This is my personal portfolio built using **Next.js 15**, **TypeScript**, **Tail
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/thesanchitadevi/my-portfolio.git
+   git clone https://github.com/thesanchitadevi/my-portfolio-client
    ```
 2. Navigate into the project directory:
    ```bash
-   cd my-portfolio
+   cd my-portfolio-client
    ```
 3. Install dependencies:
    ```bash
    npm install  # or yarn install
    ```
-4. Run the development server:
+4. Set up environment variables for authentication:
+   ```bash
+   GOOGLE_CLIENT_ID=your_google_client_id
+   GOOGLE_CLIENT_SECRET=your_google_client_secret
+   GITHUB_CLIENT_ID=your_github_client_id
+   GITHUB_CLIENT_SECRET=your_github_client_secret
+   NEXTAUTH_SECRET=your_secret_key
+   ```
+
+````
+5. Run the development server:
    ```bash
    npm run dev  # or yarn dev
-   ```
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+````
+
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Usage
 
@@ -101,10 +118,4 @@ This is my personal portfolio built using **Next.js 15**, **TypeScript**, **Tail
 - Log in to access the dashboard.
 - Use the dashboard to create, update, or delete blog posts and projects.
 
-## Contributing
-
-Feel free to fork this project and make improvements. If you find any issues, open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License.
+## Thank you for visiting
