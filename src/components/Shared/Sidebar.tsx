@@ -130,15 +130,15 @@ const Sidebar = ({ session }: { session: TUserProps | null }) => {
 
       <div className="p-4 border-t border-gray-700">
         <div className="flex items-center gap-4">
-          <div className="flex items-center space-x-3">
+          {session?.user ? (
             <button
               onClick={() => signOut({ callbackUrl: "/login" })}
               className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-700 transition-colors"
             >
               <ArrowLeftFromLine className="h-5 w-5" />
-              <span>{session?.user ? "Logout" : "Login"}</span>
+              <span>Logout</span>
             </button>
-          </div>
+          ) : null}
         </div>
       </div>
     </div>
