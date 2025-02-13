@@ -1,8 +1,7 @@
 import ProjectForm from "@/components/ui/Project/ProjectForm";
 import Link from "next/link";
-import React from "react";
 
-const CreateProjectPage = () => {
+const ProjectCreatePage = () => {
   return (
     <div className="w-full rounded-lg overflow-hidden p-4">
       <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">
@@ -18,4 +17,4 @@ const CreateProjectPage = () => {
   );
 };
 
-export default CreateProjectPage;
+export default ProjectCreatePage;
