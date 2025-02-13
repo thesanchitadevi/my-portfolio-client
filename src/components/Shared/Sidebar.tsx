@@ -12,6 +12,7 @@ import {
 import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
+import ThemeSwitcher from "../ThemeSwitcher";
 
 type MenuItem = {
   name: string;
@@ -124,22 +125,16 @@ const Sidebar = ({ session }: { session: TUserProps | null }) => {
 
       <div className="p-4 border-t border-gray-700">
         <div className="flex items-center gap-4">
-          {session?.user ? (
+          <div className="flex items-center space-x-3">
             <button
-              onClick={() => signOut()}
+              onClick={() => signOut({ callbackUrl: "/login" })}
               className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-700 transition-colors"
             >
               <ArrowLeftFromLine className="h-5 w-5" />
-              <span>Logout</span>
+              <span>{session?.user ? "Logout" : "Login"}</span>
             </button>
-          ) : (
-            <Link
-              href="/login"
-              className="border border-teal-500 text-teal-500 px-5 py-2 rounded-full hover:bg-teal-500 hover:text-black transition duration-200"
-            >
-              Login
-            </Link>
-          )}
+            <ThemeSwitcher />
+          </div>
         </div>
       </div>
     </div>
