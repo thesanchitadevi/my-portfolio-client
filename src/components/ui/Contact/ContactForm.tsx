@@ -27,9 +27,7 @@ export default function ContactForm() {
         "https://my-portfolio-server-alpha-ruby.vercel.app/api/messages",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+
           body: JSON.stringify(data),
         }
       );
