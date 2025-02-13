@@ -12,6 +12,8 @@ export const createProject = async (data: FormData) => {
     image: data.get("image") as string,
   };
 
+  // console.log({ projectData });
+
   const res = await fetch(`${process.env.BACKEND_URL}/projects`, {
     method: "POST",
     headers: {
