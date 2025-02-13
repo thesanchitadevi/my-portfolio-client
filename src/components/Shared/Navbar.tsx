@@ -18,7 +18,7 @@ const Navbar = () => {
       label: "Contact",
     },
     {
-      href: "/login",
+      href: "/dashboard",
       label: "Dashboard",
     },
   ];
