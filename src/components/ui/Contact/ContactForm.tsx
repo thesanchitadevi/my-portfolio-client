@@ -29,9 +29,6 @@ export default function ContactForm() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
-          // Add these for debugging:
-          mode: "no-cors",
-          cache: "no-cache",
         }
       );
 
