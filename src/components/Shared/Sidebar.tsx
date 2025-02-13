@@ -4,6 +4,7 @@ import {
   ArrowLeftFromLine,
   FileText,
   FolderIcon,
+  HomeIcon,
   MessageSquare,
   PlusIcon,
   SquarePen,
@@ -12,7 +13,6 @@ import {
 import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
-import ThemeSwitcher from "../ThemeSwitcher";
 
 type MenuItem = {
   name: string;
@@ -39,6 +39,11 @@ const Sidebar = ({ session }: { session: TUserProps | null }) => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   const menus: MenuItem[] = [
+    {
+      name: "Home",
+      icon: HomeIcon,
+      path: "/",
+    },
     {
       name: "Profile",
       icon: UserCircleIcon,
@@ -133,7 +138,6 @@ const Sidebar = ({ session }: { session: TUserProps | null }) => {
               <ArrowLeftFromLine className="h-5 w-5" />
               <span>{session?.user ? "Logout" : "Login"}</span>
             </button>
-            <ThemeSwitcher />
           </div>
         </div>
       </div>
