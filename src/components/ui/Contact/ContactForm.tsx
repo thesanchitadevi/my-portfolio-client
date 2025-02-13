@@ -30,7 +30,7 @@ export default function ContactForm() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
           // Add these for debugging:
-          mode: "cors",
+          mode: "no-cors",
           cache: "no-cache",
         }
       );
