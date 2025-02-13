@@ -27,7 +27,6 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
         <table className="w-full border-collapse border border-gray-300 text-sm">
           <thead>
             <tr>
-              <th className="border border-gray-300 px-2 py-1">#</th>
               <th className="border border-gray-300 px-2 py-1">Title</th>
               <th className="border border-gray-300 px-2 py-1">Description</th>
               <th className="border border-gray-300 px-2 py-1">Tech Stacks</th>
@@ -121,7 +120,7 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
                     <div key={index} className="flex gap-2 mb-2">
                       <input
                         name="techStack"
-                        value={tech}
+                        defaultValue={tech}
                         onChange={(e) => {
                           const newTechStack = [...editProject.techStack];
                           newTechStack[index] = e.target.value;

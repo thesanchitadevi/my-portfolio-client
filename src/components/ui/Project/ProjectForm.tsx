@@ -1,8 +1,20 @@
+"use client";
 import { createProject } from "@/actions/createProject";
 import { ImageIcon, Link2, Plus, Text, Wrench } from "lucide-react";
 import Form from "next/form";
+import { useState } from "react";
 
 const ProjectForm = () => {
+  const [techStackItems, setTechStackItems] = useState<string[]>([]);
+  const [currentTech, setCurrentTech] = useState("");
+
+  const handleAddTech = () => {
+    if (currentTech.trim()) {
+      setTechStackItems([...techStackItems, currentTech.trim()]);
+      setCurrentTech("");
+    }
+  };
+
   return (
     <div>
       <Form action={createProject} className="max-w-2xl space-y-6">
@@ -64,18 +76,32 @@ const ProjectForm = () => {
             <input
               type="text"
               id="techStack"
-              name="techStack"
               placeholder="Add a technology"
               className="flex-1 p-2 border rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+              value={currentTech}
+              onChange={(e) => setCurrentTech(e.target.value)}
             />
             <button
               type="button"
+              onClick={handleAddTech}
               className="px-4 py-2 text-white bg-orange-500 rounded-md hover:bg-orange-600"
             >
               <Plus size={20} />
             </button>
           </div>
-          <div className="flex flex-wrap gap-2"></div>
+          <div className="flex flex-wrap gap-2">
+            {techStackItems.map((tech, index) => (
+              <span
+                key={index}
+                className="px-2 py-1 text-sm bg-gray-100 rounded-md dark:bg-gray-800"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+          {techStackItems.map((tech, index) => (
+            <input key={index} type="hidden" name="techStack" value={tech} />
+          ))}
         </div>
 
         {/* Image URL Input */}

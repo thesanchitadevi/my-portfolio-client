@@ -74,7 +74,8 @@ export const updateProject = async (formData: FormData) => {
   });
 
   if (!res.ok) {
-    throw new Error("Failed to update project");
+    const errorData = await res.json();
+    throw new Error(errorData.message || "Failed to update project");
   }
 
   revalidateTag("projects");

@@ -1,9 +1,20 @@
-"use server";
-
 import { redirect } from "next/navigation";
 
 export const createProject = async (data: FormData) => {
-  const projectData = Object.fromEntries(data.entries());
+  const title = data.get("title") as string;
+  const description = data.get("description") as string;
+  const liveLink = data.get("liveLink") as string;
+  const techStack = data.getAll("techStack") as string[];
+  const image = data.get("image") as string;
+
+  const projectData = {
+    title,
+    description,
+    liveLink,
+    techStack,
+    image,
+  };
+
   console.log({ projectData });
 
   const res = await fetch(`${process.env.BACKEND_URL}/projects`, {
@@ -17,7 +28,7 @@ export const createProject = async (data: FormData) => {
   const projectInfo = await res.json();
 
   if (projectInfo) {
-    redirect("/dahboard/projects");
+    redirect("/dashboard/projects");
   }
   return projectInfo;
 };
