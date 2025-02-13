@@ -1,7 +1,5 @@
 "use server";
 
-import { redirect } from "next/navigation";
-
 export const createProject = async (data: FormData) => {
   const techStack = data.getAll("techStack");
   const projectData = {
@@ -27,5 +25,5 @@ export const createProject = async (data: FormData) => {
     await res.json();
   }
 
-  redirect("/dahboard/projects");
+  // redirect("/dahboard/projects");
 };
