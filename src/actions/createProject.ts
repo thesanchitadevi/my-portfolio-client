@@ -3,8 +3,16 @@
 import { redirect } from "next/navigation";
 
 export const createProject = async (data: FormData) => {
-  const projectData = Object.fromEntries(data.entries());
-  console.log({ projectData });
+  const techStack = data.getAll("techStack");
+  const projectData = {
+    title: data.get("title") as string,
+    description: data.get("description") as string,
+    liveLink: data.get("liveLink") as string,
+    techStack: techStack.filter(
+      (item) => typeof item === "string" && item.trim() !== ""
+    ),
+    image: data.get("image") as string,
+  };
 
   const res = await fetch(`${process.env.BACKEND_URL}/projects`, {
     method: "POST",
@@ -14,10 +22,10 @@ export const createProject = async (data: FormData) => {
     body: JSON.stringify(projectData),
   });
 
-  const projectInfo = await res.json();
-
-  if (projectInfo) {
-    redirect("/dahboard/projects");
+  const contentType = res.headers.get("content-type");
+  if (contentType?.includes("application/json")) {
+    await res.json();
   }
-  return projectInfo;
+
+  redirect("/dahboard/projects");
 };
