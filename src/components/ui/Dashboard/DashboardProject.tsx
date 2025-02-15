@@ -87,7 +87,7 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
         {/* Edit Modal */}
         {editProject && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-lg p-6 w-full max-w-lg">
+            <div className="bg-white dark:bg-gray-950 rounded-lg p-6 w-full max-w-lg">
               <h2 className="text-xl font-bold mb-4">Edit Project</h2>
               <Form action={updateProject} className="space-y-4">
                 <input type="hidden" name="id" value={editProject?._id} />
@@ -159,7 +159,7 @@ const DashboardTableProject = ({ projects }: { projects: IProject[] }) => {
                         techStack: [...editProject.techStack, ""],
                       });
                     }}
-                    className="mt-2 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+                    className="mt-2 px-4 py-2 bg-gray-200 dark:bg-gray-800 rounded hover:bg-gray-300"
                   >
                     Add Tech Stack
                   </button>

@@ -23,7 +23,7 @@ const DashboardMessages = async () => {
         </h2>
         <table className="w-full border-collapse border border-gray-300 text-sm">
           <thead>
-            <tr className="bg-gray-200">
+            <tr>
               <th className="border border-gray-300 px-2 py-1">#</th>
               <th className="border border-gray-300 px-2 py-1">Name</th>
               <th className="border border-gray-300 px-2 py-1">Email</th>

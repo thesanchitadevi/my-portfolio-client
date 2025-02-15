@@ -73,7 +73,7 @@ const DashboardTableBlogs = ({ blogs }: { blogs: IBlog[] }) => {
         {/* Edit Modal */}
         {editingBlog && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-lg p-6 w-full max-w-lg">
+            <div className="bg-white dark:bg-gray-950 rounded-lg p-6 w-full max-w-lg">
               <h2 className="text-xl font-bold mb-4">Edit Blog</h2>
               <Form action={updateBlog} className="space-y-4">
                 <input type="hidden" name="id" value={editingBlog._id} />
@@ -110,7 +110,7 @@ const DashboardTableBlogs = ({ blogs }: { blogs: IBlog[] }) => {
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    className="px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700"
                   >
                     Save Changes
                   </button>
