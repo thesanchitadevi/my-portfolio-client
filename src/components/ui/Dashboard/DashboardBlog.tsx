@@ -25,9 +25,8 @@ const DashboardTableBlogs = ({ blogs }: { blogs: IBlog[] }) => {
         <table className="w-full border-collapse border border-gray-300 text-sm">
           <thead>
             <tr>
-              <th className="border border-gray-300 px-2 py-1">#</th>
               <th className="border border-gray-300 px-2 py-1">Title</th>
-
+              <th className="border border-gray-300 px-2 py-1">Content</th>
               <th className="border border-gray-300 px-2 py-1">Category</th>
               <th className="border border-gray-300 px-2 py-1">Actions</th>
             </tr>
